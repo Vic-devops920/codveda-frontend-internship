@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hope Foundation is a volunteering charity providing education, food support and community care for families in need. Become a volunteer today." />
+  <title>Hope Foundation – Changing lives one community at a time</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="#home" class="logo">Hope<span>Foundation</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#vacancies">Vacancies</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button type="button" class="btn btn-small" data-open-modal>Volunteer</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-content fade-in">
+          <p class="eyebrow">Volunteer-led charity</p>
+          <h1 id="hero-title">Changing lives, one community at a <span class="accent">time</span>.</h1>
+          <p class="lead">Together we can provide education, food support and hope for families in need across our communities.</p>
+          <div class="hero-actions">
+            <button type="button" class="btn" data-open-modal>Become a volunteer</button>
+            <a href="#vacancies" class="btn btn-outline">See vacancies</a>
+          </div>
+        </div>
+        <figure class="hero-visual fade-in" aria-label="A snapshot of our impact">
+          <div class="impact-card">
+            <div class="impact-item"><strong>5,000+</strong><span>meals served</span></div>
+            <div class="impact-item"><strong>1,200+</strong><span>volunteers</span></div>
+            <div class="impact-item"><strong>75+</strong><span>communities reached</span></div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section id="mission" class="section" aria-labelledby="mission-title">
+      <div class="container">
+        <h2 id="mission-title" class="section-title">Our mission</h2>
+        <p class="section-sub">Everything we do starts with neighbours helping neighbours, and every hour you give goes straight to the people who need it.</p>
+        <div class="grid cards">
+          <article class="card fade-in">
+            <div class="icon" aria-hidden="true">📚</div>
+            <h3>Education</h3>
+            <p>Supporting children through quality learning opportunities, from homework clubs to reading help.</p>
+          </article>
+          <article class="card fade-in">
+            <div class="icon" aria-hidden="true">🍲</div>
+            <h3>Food support</h3>
+            <p>Providing nutritious meals and food parcels to vulnerable families.</p>
+          </article>
+          <article class="card fade-in">
+            <div class="icon" aria-hidden="true">🤝</div>
+            <h3>Community care</h3>
+            <p>Empowering people through outreach, befriending and neighbourhood clean-ups.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section id="impact" class="section impact" aria-labelledby="impact-title">
+      <div class="container">
+        <h2 id="impact-title" class="section-title">Our impact</h2>
+        <div class="grid stats">
+          <div class="stat fade-in">
+            <h3><span class="count" data-target="5000">0</span>+</h3>
+            <p>Meals served</p>
+          </div>
+          <div class="stat fade-in">
+            <h3><span class="count" data-target="1200">0</span>+</h3>
+            <p>Volunteers</p>
+          </div>
+          <div class="stat fade-in">
+            <h3><span class="count" data-target="75">0</span>+</h3>
+            <p>Communities reached</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current vacancies -->
+    <section id="vacancies" class="section section-alt" aria-labelledby="vacancies-title">
+      <div class="container">
+        <h2 id="vacancies-title" class="section-title">Current vacancies across the UK</h2>
+        <p class="section-sub">Find a volunteering role near you, or one you can do from home.</p>
+
+        <div class="filters">
+          <div class="chips" role="group" aria-label="Filter by type of role">
+            <button type="button" class="chip active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-filter="Charity" aria-pressed="false">Charity &amp; community</button>
+            <button type="button" class="chip" data-filter="Tech" aria-pressed="false">Tech &amp; digital</button>
+            <button type="button" class="chip" data-filter="Other" aria-pressed="false">Other</button>
+          </div>
+          <div class="region-filter">
+            <label for="region-select">Region</label>
+            <select id="region-select">
+              <option value="all">All UK</option>
+              <option>Remote</option>
+              <option>London</option>
+              <option>South East</option>
+              <option>South West</option>
+              <option>East of England</option>
+              <option>East Midlands</option>
+              <option>West Midlands</option>
+              <option>Yorkshire &amp; Humber</option>
+              <option>North West</option>
+              <option>North East</option>
+              <option>Scotland</option>
+              <option>Wales</option>
+              <option>Northern Ireland</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+        <div class="grid vacancies" id="vacancy-list"></div>
+        <p class="empty" id="vacancy-empty" hidden>No vacancies match those filters right now. Try another region, or register and we'll let you know when something comes up.</p>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how-it-works" class="section" aria-labelledby="how-title">
+      <div class="container">
+        <h2 id="how-title" class="section-title">How to get involved</h2>
+        <ol class="steps">
+          <li class="fade-in"><span class="step-num">1</span><h3>Register</h3><p>Tell us about yourself in two minutes.</p></li>
+          <li class="fade-in"><span class="step-num">2</span><h3>Choose a role</h3><p>We'll match you with a cause that suits you.</p></li>
+          <li class="fade-in"><span class="step-num">3</span><h3>Make a difference</h3><p>Turn up, help out and meet great people.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Stories -->
+    <section id="stories" class="section section-alt" aria-labelledby="stories-title">
+      <div class="container">
+        <h2 id="stories-title" class="section-title">Volunteer stories</h2>
+        <div class="grid testimonials">
+          <blockquote class="card fade-in">
+            <p>“I give two hours on Saturdays and it's the best part of my week.”</p>
+            <footer>Amara, food support volunteer</footer>
+          </blockquote>
+          <blockquote class="card fade-in">
+            <p>“Everyone was so welcoming. I never felt like a stranger.”</p>
+            <footer>Daniel, community care volunteer</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteer call to action -->
+    <section id="volunteer" class="section cta" aria-labelledby="volunteer-cta-title">
+      <div class="container">
+        <h2 id="volunteer-cta-title" class="section-title">Ready to lend a hand?</h2>
+        <p class="section-sub">Register in two minutes and we'll match you with a cause that suits you.</p>
+        <button type="button" class="btn btn-light" data-open-modal>Become a volunteer</button>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Contact us</h2>
+        <address class="contact-list">
+          <p><span aria-hidden="true">✉️</span> <a href="mailto:info@hopefoundation.org">info@hopefoundation.org</a></p>
+          <p><span aria-hidden="true">📞</span> <a href="tel:+447123456789">+44 7123 456 789</a></p>
+          <p><span aria-hidden="true">📍</span> Leicester, United Kingdom</p>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Hope Foundation. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Volunteer registration pop-up -->
+  <div class="modal" id="volunteer-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="volunteer-title" tabindex="-1">
+      <button type="button" class="modal-close" aria-label="Close registration form" data-close-modal>&times;</button>
+      <h2 id="volunteer-title">Volunteer registration</h2>
+      <p class="modal-sub">Sign up and we'll be in touch to match you with a cause.</p>
+      <p class="applying-for" id="applying-for" hidden></p>
+      <form id="volunteerForm" novalidate>
+          <div class="input-group">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required />
+            <small class="error" id="name-error" aria-live="polite"></small>
+          </div>
+
+          <div class="input-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+            <small class="error" id="email-error" aria-live="polite"></small>
+          </div>
+
+          <div class="input-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+44 7123 456789" autocomplete="tel" required />
+            <small class="error" id="phone-error" aria-live="polite"></small>
+          </div>
+
+          <div class="input-group">
+            <label for="interest">What kind of volunteering interests you?</label>
+            <select id="interest" name="interest" required>
+              <option value="">Choose an area…</option>
+              <optgroup label="Charity &amp; community">
+                <option>Education &amp; tutoring</option>
+                <option>Food support</option>
+                <option>Community care</option>
+                <option>Befriending &amp; companionship</option>
+                <option>Charity shop</option>
+                <option>Fundraising &amp; events</option>
+                <option>Youth work</option>
+              </optgroup>
+              <optgroup label="Tech &amp; digital">
+                <option>Web development</option>
+                <option>IT support &amp; training</option>
+                <option>Data &amp; analytics</option>
+                <option>Social media &amp; design</option>
+              </optgroup>
+              <optgroup label="Other ways to help">
+                <option>Admin &amp; office support</option>
+                <option>Driving &amp; delivery</option>
+                <option>Skilled trades &amp; repairs</option>
+                <option>Other</option>
+              </optgroup>
+              <option>Not sure yet</option>
+            </select>
+            <small class="error" id="interest-error" aria-live="polite"></small>
+          </div>
+
+          <div class="input-group">
+            <label for="password">Password</label>
+            <div class="password-wrap">
+              <input type="password" id="password" name="password" placeholder="At least 8 characters" autocomplete="new-password" required />
+              <button type="button" id="toggle-password" aria-label="Show password">Show</button>
+            </div>
+            <div class="strength" aria-hidden="true"><span id="strength-bar"></span></div>
+            <small class="strength-text" id="strength-text"></small>
+            <small class="error" id="password-error" aria-live="polite"></small>
+          </div>
+
+          <button type="submit" class="btn btn-block">Register</button>
+          <p id="successMessage" class="success" role="status" hidden></p>
+        </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
